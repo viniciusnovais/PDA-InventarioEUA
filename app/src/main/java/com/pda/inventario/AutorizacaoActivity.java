@@ -68,7 +68,10 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -86,33 +89,45 @@ import android.widget.Toast;
 public class AutorizacaoActivity extends AbsRuntimePermission {
     private final AutorizacaoBC repository = new AutorizacaoBC(this);
     private ProgressDialog dialogLimpar;
-    private List<String> fileNameList = new ArrayList<String>();
 
     UsuarioEO objUsuarioLogado = new UsuarioEO();
     InventarioEO objInventario = new InventarioEO();
 
     Button btnOK, btnLimpar, btnConf;
-    Dialog dialog;
     private EditText etAutorizacao;
     TextView tvUsuarioLogado;
 
-    int downloadProgress = 0, downloadedSize = 0, totalSize = 0;
+    int downloadProgress = 0;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+    private String login, senha;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.autorizacao);
 
-        Intent intent = getIntent();
-        objUsuarioLogado = (UsuarioEO) intent.getSerializableExtra("UsuarioEO");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR1) {
+            if (getIntent() != null) {
+                try {
+                    login = getIntent().getExtras().getString("login", "NA");
+                    senha = getIntent().getExtras().getString("senha", "NA");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                Toast.makeText(AutorizacaoActivity.this, "Null", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        Toast.makeText(AutorizacaoActivity.this, "login->" + login, Toast.LENGTH_LONG).show();
+        Toast.makeText(AutorizacaoActivity.this, "senha->" + senha, Toast.LENGTH_LONG).show();
 
         objUsuarioLogado = new UsuarioEO();
-        objUsuarioLogado.setNome(getIntent().getExtras().getString("login"));
+        objUsuarioLogado.setNome(login);
         objUsuarioLogado.setCodigo(1);
         objUsuarioLogado.setCodigoPerfil(1);
 
@@ -125,7 +140,7 @@ public class AutorizacaoActivity extends AbsRuntimePermission {
         btnConf = (Button) findViewById(R.id.btnConfig);
 
         etAutorizacao = (EditText) findViewById(R.id.etAutorizacao);
-        etAutorizacao.setText("5855085");
+        etAutorizacao.setText("");
 
         dialogLimpar = new ProgressDialog(AutorizacaoActivity.this);
 
@@ -161,8 +176,9 @@ public class AutorizacaoActivity extends AbsRuntimePermission {
         if (!new ConfiguracaoBC(this).VerificaConfig()) {
             Intent i = new Intent(AutorizacaoActivity.this, ConfiguracaoActivity.class);
             startActivity(i);
-//			Toast.makeText(getApplicationContext(), StringUtils.FIRST_CONFIG, Toast.LENGTH_SHORT).show();
+
         } else {
+            //Toast.makeText(getApplicationContext(), StringUtils.FIRST_CONFIG, Toast.LENGTH_SHORT).show();
         }
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -305,14 +321,14 @@ public class AutorizacaoActivity extends AbsRuntimePermission {
                     objInventario.setStatus(Integer.parseInt(objSoap.getProperty("Status").toString()));
 
                     //if (verificaImportacao()) {
-                        //this.getUsers();
-                        this.getDepto();
-                        this.getSetor();
-                        //this.GetEndereco();
-                        this.DownloadZipFile(GetEnderecoFile());
-                        //this.getProdutoList(objInventario.getIdInventario());
-                        this.DownloadZipFile(GetProduto());
-                   // }
+                    //this.getUsers();
+                    this.getDepto();
+                    this.getSetor();
+                    //this.GetEndereco();
+                    this.DownloadZipFile(GetEnderecoFile());
+                    //this.getProdutoList(objInventario.getIdInventario());
+                    this.DownloadZipFile(GetProduto());
+                    // }
                     return StringUtils.INVENT_OK;
                 }
             } else

@@ -2,118 +2,125 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:layout_margin="16dp"
     android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/tvTituloTela"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Contagem"
-        android:textColor="#fff" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="start|bottom"
+            android:src="@drawable/pda"/>
+
+        <TextView
+            android:id="@+id/tvTituloTela"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_gravity="bottom"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/principal_btnContagem"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/etEndProd"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight=".5"
-            android:inputType="number"
-            android:maxLines="1"
-            android:background="@color/white" />
-
-        <ImageView
-            android:id="@+id/btnProcurar"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight=".1"
-            android:src="@drawable/ic_youtube_searched_for_white_24dp" />
+            android:background="@drawable/bg_edittext"
+            android:focusable="true"
+            android:inputType="number"
+            android:drawableRight="@drawable/ic_search"
+            android:padding="5dp"
+            android:maxLines="1" />
 
     </LinearLayout>
 
 
     <TextView
         android:id="@+id/tvEndereco"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edittext"
+        android:padding="5dp"
         android:text="@string/endereco"
-        android:textColor="@color/white"
         android:textSize="18dp" />
 
     <TextView
         android:id="@+id/tvDepto"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edittext"
+        android:padding="5dp"
         android:text="@string/departamento"
-        android:textColor="@color/white"
         android:textSize="18dp" />
 
     <TextView
         android:id="@+id/tvSetor"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edittext"
+        android:padding="5dp"
         android:text="@string/setor"
-        android:textColor="@color/white"
         android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnFechar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_weight=".5"
-            android:background="@color/black"
+            android:layout_weight=".33"
+            android:background="@drawable/bg_button_white"
             android:text="@string/fechar"
-            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:stateListAnimator="@null"
+            android:textColor="@color/green"
             android:textSize="18dp" />
 
         <Button
             android:id="@+id/btnExcluir"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight=".5"
-            android:background="@color/black"
+            android:layout_marginLeft="5dp"
+            android:layout_weight=".33"
+            android:background="@drawable/bg_button_white"
             android:text="@string/excluir"
-            android:textColor="@color/white"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
             android:textSize="18dp" />
 
         <Button
             android:id="@+id/btnZerar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight=".5"
-            android:background="@color/black"
+            android:layout_marginLeft="5dp"
+            android:layout_weight=".33"
+            android:background="@drawable/bg_button_white"
             android:text="@string/zerar"
-            android:textColor="@color/white"
+            android:stateListAnimator="@null"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
             android:textSize="18dp" />
 
     </LinearLayout>
@@ -121,33 +128,18 @@
 
     <Spinner
         android:id="@+id/spinMetodoContagem"
+        style="?android:attr/spinnerItemStyle"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@color/gray"></Spinner>
-
-    <TextView
-        android:id="@+id/tvProdDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/produto"
-        android:textColor="@color/white"
-        android:textSize="18dp" />
-
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_spinner" />
 
     <ListView
         android:id="@+id/lvColeta"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/gray">
-
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_edittext">
 
     </ListView>
 

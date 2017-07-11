@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PDA-Inventory</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="Produto">Product</string>
+    <string name="autorizacao_btnLimparColetor" translatable="false">Clear Collector</string>
+    <string name="autorizacao_tvAutorizacao" translatable="false">Authorization</string>
+    <string name="autorizacao_tvAutorizacaoHint" translatable="false">Enter authorization</string>
+    <string name="autorizacao_tvUserLabel" translatable="false">User name</string>
+    <string name="configuracoes">Settings</string>
+    <string name="confirmar">Confirm</string>
+    <string name="contagem_etEnderecoHint" translatable="false">Open an address</string>
+    <string name="contagem_tvDepartamento" translatable="false">Department:</string>
+    <string name="contagem_tvEndereco" translatable="false">Address:</string>
+    <string name="contagem_tvProduto" translatable="false">Product:</string>
+    <string name="contagem_tvQuantidade" translatable="false">quantity</string>
+    <string name="contagem_tvSetor" translatable="false">Sector:</string>
+    <string name="departamento">Department:</string>
+    <string name="endereco">Address:</string>
+    <string name="envio">Pending sending: </string>
+    <string name="excluir">Delete</string>
+    <string name="fechar">Close</string>
+    <string name="inventario_cancel" translatable="false">Cancel</string>
+    <string name="inventario_blank" translatable="false">...</string>
+    <string name="inventario_exit" translatable="false">Do you want to exit the system?</string>
+    <string name="inventario_ok" translatable="false">OK</string>
+    <string name="inventario_rotativo">Rotative inventory</string>
+    <string name="limpar">Clean</string>
+    <string name="login_btnCancel" translatable="false">Exit</string>
+    <string name="login_btnEnter" translatable="false">Enter</string>
+    <string name="login_ivDescription" translatable="false">Login</string>
+    <string name="login_tvPassword" translatable="false">Password</string>
+    <string name="login_tvPasswordHint" translatable="false">Type the password</string>
+    <string name="login_tvUsuario" translatable="false">User</string>
+    <string name="login_tvUsuarioHint" translatable="false">Enter user</string>
+    <string name="principal_btnAuditoria" translatable="false">Audit</string>
+    <string name="principal_btnContFinal" translatable="false">Final count</string>
+    <string name="principal_btnContagem" translatable="false">Count</string>
+    <string name="principal_btnDivergencia" translatable="false">Divergence</string>
+    <string name="principal_btnExportacao" translatable="false">Export</string>
+    <string name="principal_btnImportacao" translatable="false">Import</string>
+    <string name="principal_tvPendentes" translatable="false">Pending Submissions:</string>
+    <string name="produto">Product:</string>
+    <string name="setor">Sector:</string>
+    <string name="zerar">Clean</string>
+    <string name="servidor">Server</string>
+    <string name="diretorio_virtual">Virtual Directory</string>
+    <string name="filial">store code</string>
+    <string name="entrar">Enter</string>
+
+</resources>

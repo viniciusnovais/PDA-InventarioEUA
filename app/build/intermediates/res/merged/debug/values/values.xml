@@ -19,7 +19,9 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
-    <color name="black">#000</color>
+    <color name="black">#000000</color>
+    <color name="black_prinipal">#333333</color>
+    <color name="blue">#313ef9</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -28,6 +30,8 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
+    <color name="color_gray_dark_edittext">#666666</color>
+    <color name="color_gray_dark_textview">#333333</color>
     <color name="common_action_bar_splitter">#d2d2d2</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
@@ -61,8 +65,11 @@
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="foreground_material_dark">@android:color/white</color>
-    <color name="foreground_material_light">@android:color/black</color>
+    <color name="foreground_material_light">#FF333333</color>
     <color name="gray">#aaa</color>
+    <color name="green">#FF333333</color>
+    <color name="green_dark">#000000</color>
+    <color name="green_principal">#999b93</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="material_blue_grey_800">#ff37474f</color>
@@ -81,10 +88,10 @@
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <color name="notification_material_background_media_default_color">#ff424242</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
-    <color name="primary_dark_material_light">@color/material_grey_600</color>
+    <color name="primary_dark_material_light">#FF333333</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
-    <color name="primary_material_light">@color/material_grey_100</color>
-    <color name="primary_text_default_material_dark">#ffffffff</color>
+    <color name="primary_material_light">#ffffff</color>
+    <color name="primary_text_default_material_dark">#ffffff</color>
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
@@ -99,7 +106,6 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <color name="white">#fff</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode">
             
             <enum name="normal" value="0"/>
@@ -590,6 +596,7 @@
     <integer name="hide_password_duration">320</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="Produto">Produto</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
@@ -661,6 +668,8 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="configuracoes">Configurações</string>
+    <string name="confirmar">Confirmar</string>
     <string name="contagem_etEnderecoHint" translatable="false">Abra um endereço</string>
     <string name="contagem_tvDepartamento" translatable="false">Departamento: </string>
     <string name="contagem_tvEndereco" translatable="false">Endereço: </string>
@@ -668,18 +677,23 @@
     <string name="contagem_tvQuantidade" translatable="false">Quantidade </string>
     <string name="contagem_tvSetor" translatable="false">Setor: </string>
     <string name="departamento">Departamento:</string>
+    <string name="diretorio_virtual">Diretório Virtual</string>
     <string name="endereco">Endereço: </string>
+    <string name="entrar">Entrar</string>
     <string name="envio">Envios Pendentes:</string>
     <string name="excluir">Excluir</string>
     <string name="fechar">Fechar</string>
+    <string name="filial">Filial</string>
     <string name="hello_world" translatable="false">Hello world!</string>
     <string name="inventario_blank" translatable="false">...</string>
     <string name="inventario_cancel" translatable="false">Cancelar</string>
     <string name="inventario_exit" translatable="false">Deseja sair do sistema ?</string>
     <string name="inventario_ok" translatable="false">OK</string>
+    <string name="inventario_rotativo">Inventário Rotativo</string>
+    <string name="limpar">Limpar</string>
     <string name="login_btnCancel" translatable="false">Sair</string>
     <string name="login_btnEnter" translatable="false">Entrar</string>
-    <string name="login_ivDescription" translatable="false">Logo</string>
+    <string name="login_ivDescription" translatable="false">Login</string>
     <string name="login_tvPassword" translatable="false">Senha</string>
     <string name="login_tvPasswordHint" translatable="false">Digite a senha</string>
     <string name="login_tvUsuario" translatable="false">Usuário</string>
@@ -698,6 +712,7 @@
     <string name="principal_tvPendentes" translatable="false">Envios Pendentes: </string>
     <string name="produto">Produto: </string>
     <string name="search_menu_title">Search</string>
+    <string name="servidor">Servidor</string>
     <string name="setor">Setor:</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_contagem" translatable="false">ContagemActivity</string>
@@ -710,11 +725,19 @@
         <item name="android:windowEnterAnimation">@anim/design_bottom_sheet_slide_in</item>
         <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
     </style>
-    <style name="AppBaseTheme" parent="Theme.AppCompat">
+    <style name="AppLeroyTheme" parent="AppBaseTheme"/>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         
-    </style>
-    <style name="AppTheme" parent="AppBaseTheme">
-        
+        <item name="android:colorForeground">@color/black_prinipal</item>
+        <item name="android:textColorPrimaryInverse">@color/common_google_signin_btn_text_dark_focused
+        </item>
+        <item name="android:spinnerItemStyle">@style/TextViewSpinnerItem</item>
+        <item name="android:textColorPrimary">@color/common_plus_signin_btn_text_light_pressed
+        </item>
+        <item name="android:windowBackground">@android:color/background_light</item>
+        <item name="colorAccent">?attr/actionModeSplitBackground</item>
+        <item name="colorPrimaryDark">@color/black_prinipal</item>
+
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1998,6 +2021,10 @@
     <style name="TextAppearance.Widget.AppCompat.Toolbar.Subtitle" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
     </style>
     <style name="TextAppearance.Widget.AppCompat.Toolbar.Title" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Title">
+    </style>
+    <style name="TextViewSpinnerItem" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:paddingLeft">40dp</item>
+        <item name="android:paddingRight">40dp</item>
     </style>
     <style name="Theme.AppCompat" parent="Base.Theme.AppCompat"/>
     <style name="Theme.AppCompat.CompactMenu" parent="Base.Theme.AppCompat.CompactMenu"/>
