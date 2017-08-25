@@ -68,26 +68,28 @@ public class LoginActivity extends AppCompatActivity {
 //        editor.putString("senha", etPassword.getText().toString());
 //        editor.commit();
 
-        AsyncCallWS task = new AsyncCallWS();
-        task.execute();
+//        AsyncCallWS task = new AsyncCallWS();
+//        task.execute();
 
 
-//        btnLogin.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//
-//                if (etLogin.getText().toString().equals("") || etPassword.getText().toString().equals("")) {
-//                    Toast.makeText(getApplicationContext(), StringUtils.BLANK_FIELD, Toast.LENGTH_SHORT).show();
-//                } else {
-//                    if (etLogin.getText().toString().equals("12345678") && etPassword.getText().toString().equals("12345678")) {
-//                        Intent intent = new Intent(LoginActivity.this, ConfiguracaoActivity.class);
-//                        startActivity(intent);
-//                    } else {
-//                        AsyncCallWS task = new AsyncCallWS();
-//                        task.execute();
-//                    }
-//                }
-//            }
-//        });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                if (etLogin.getText().toString().equals("") || etPassword.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(), StringUtils.BLANK_FIELD, Toast.LENGTH_SHORT).show();
+                } else {
+                    if (etLogin.getText().toString().equals("12345678") && etPassword.getText().toString().equals("12345678")) {
+                        Intent intent = new Intent(LoginActivity.this, ConfiguracaoActivity.class);
+                        startActivity(intent);
+                    } else {
+                        login = etLogin.getText().toString();
+                        senha = etPassword.getText().toString();
+                        AsyncCallWS task = new AsyncCallWS();
+                        task.execute();
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -126,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             Log.i(TAG, "doInBackground");
-
+            resultString = getLogin(login, senha);
 
             return null;
         }
@@ -135,38 +137,20 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             Log.i(TAG, "onPostExecute");
 
-            Context otherAppsContext;
-            try {
-                otherAppsContext = LoginActivity.this.createPackageContext("leroymerlin.com.br.mobile", 0);
 
-
-                SharedPreferences prefsPrivate = otherAppsContext.getSharedPreferences("PDA-INVENTARIO", Context.MODE_WORLD_READABLE);
-
-                Toast.makeText(LoginActivity.this, "login->" + prefsPrivate.getString("login", "NA"), Toast.LENGTH_LONG).show();
-                Toast.makeText(LoginActivity.this, "login->" + prefsPrivate.getString("senha", "NA"), Toast.LENGTH_LONG).show();
-
-
-//            if (resultString.compareTo(StringUtils.AUTHENTICATION_OK) == 0) {
-//                Intent intent = new Intent(LoginActivity.this, AutorizacaoActivity.class);
-//                intent.putExtra("UsuarioEO", objUsuaurio);
-//                getIntent().getSerializableExtra("UsuarioEO");
-//                startActivity(intent);
-//                finish();
-//            }
+            //if (resultString.compareTo(StringUtils.AUTHENTICATION_OK) == 0) {
                 Intent intent = new Intent(LoginActivity.this, AutorizacaoActivity.class);
-                intent.putExtra("login", prefsPrivate.getString("login","NA"));
+                intent.putExtra("login", login);
+                intent.putExtra("senha", senha);
                 startActivity(intent);
-                //showResult(resultString);
+                finish();
+            //}
+            showResult(resultString);
 
-            } catch (PackageManager.NameNotFoundException e) {
-                // log and/or handle
-                Toast.makeText(LoginActivity.this, "Arquivo não encontrado", Toast.LENGTH_SHORT).show();
-            } catch (NullPointerException e) {
-                Toast.makeText(LoginActivity.this, "Null", Toast.LENGTH_SHORT).show();
-            }
 
             this.dialog.dismiss();
         }
+
     }
 
     public void showResult(String result) {
